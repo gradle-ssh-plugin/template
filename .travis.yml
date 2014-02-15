@@ -1,0 +1,18 @@
+language: java
+jdk: oraclejdk7
+install:
+  - ./gradlew
+  - ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_rsa
+  - tee -a ~/.ssh/authorized_keys < ~/.ssh/id_rsa.pub
+  - ssh -o StrictHostKeyChecking=no
+        -o UserKnownHostsFile=~/.ssh/known_hosts
+        -o HashKnownHosts=no
+        -o HostKeyAlgorithms=ssh-rsa
+        -i ~/.ssh/id_rsa localhost true
+  - grep localhost ~/.ssh/known_hosts
+script:
+  - ./gradlew exampleTask
+
+env:
+  global:
+    - TERM=dumb

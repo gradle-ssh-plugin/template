@@ -1,20 +1,30 @@
-SSH Project Template [![Build Status](https://travis-ci.org/int128/gradle-ssh.png?branch=master)](https://travis-ci.org/int128/gradle-ssh)
-====================
+Gradle SSH Plugin Template Project [![Build Status](https://travis-ci.org/int128/gradle-ssh.png?branch=master)](https://travis-ci.org/int128/gradle-ssh)
+==================================
 
-Starting point for SSH scripting.
+A template project with [Gradle SSH Plugin](https://github.com/int128/gradle-ssh-plugin).
+
+
+Prerequisite
+------------
+
+Java runtime and Internet connection.
 
 
 How to use
 ----------
 
-Clone the repository or download zip archive.
-
+Download an archive and extract it.
 ```bash
-git clone git@github.com:int128/gradle-ssh.git
+curl -O https://github.com/int128/gradle-ssh/archive/master.zip
+unzip master.zip
 ```
 
-Just run Gradle. It requires JavaVM.
+Edit build.gradle to fit your environment.
+```bash
+vim build.gradle
+```
 
+Run Gradle.
 ```bash
 ./gradlew exampleTask
 ```

@@ -11,7 +11,7 @@ install:
         -i ~/.ssh/id_rsa localhost true
   - grep localhost ~/.ssh/known_hosts
 script:
-  - ./gradlew exampleTask
+  - ./gradlew showPlatformVersion
 
 env:
   global:

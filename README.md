@@ -26,5 +26,5 @@ vim build.gradle
 
 Run Gradle.
 ```bash
-./gradlew exampleTask
+./gradlew showPlatformVersion
 ```

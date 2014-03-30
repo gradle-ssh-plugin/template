@@ -24,10 +24,6 @@ task showPlatformVersion(type: SshTask) {
     }
 }
 
-task exampleTask(dependsOn: showPlatformVersion) {
-}
-
-
 task wrapper(type: Wrapper) {
     gradleVersion = '1.10'
 }

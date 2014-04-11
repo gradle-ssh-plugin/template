@@ -15,7 +15,7 @@ How to use
 
 Download an archive and extract it.
 ```bash
-curl -O https://github.com/int128/gradle-ssh/archive/master.zip
+curl -O https://github.com/gradle-ssh-plugin/template/archive/master.zip
 unzip master.zip
 ```
 

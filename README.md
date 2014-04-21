@@ -1,4 +1,4 @@
-Gradle SSH Plugin Template Project [![Build Status](https://travis-ci.org/int128/gradle-ssh.png?branch=master)](https://travis-ci.org/int128/gradle-ssh)
+Gradle SSH Plugin Template Project [![Build Status](https://travis-ci.org/gradle-ssh-plugin/template.svg?branch=master)](https://travis-ci.org/gradle-ssh-plugin/template)
 ==================================
 
 A template project with [Gradle SSH Plugin](https://github.com/int128/gradle-ssh-plugin).

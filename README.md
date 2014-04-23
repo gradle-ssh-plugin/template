@@ -10,13 +10,13 @@ Prerequisite
 Java runtime and Internet connection.
 
 
-How to use
+Try it now
 ----------
 
-Download an archive and extract it.
+Clone the repository.
 ```bash
-curl -O https://github.com/gradle-ssh-plugin/template/archive/master.zip
-unzip master.zip
+git clone https://github.com/gradle-ssh-plugin/template.git
+cd template
 ```
 
 Edit build.gradle to fit your environment.
@@ -24,7 +24,7 @@ Edit build.gradle to fit your environment.
 vim build.gradle
 ```
 
-Run Gradle.
+Run the Gradle task.
 ```bash
 ./gradlew showPlatformVersion
 ```

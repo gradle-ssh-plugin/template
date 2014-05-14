@@ -1,3 +1,4 @@
+apply plugin: 'war'
 apply plugin: 'ssh'
 
 buildscript {
@@ -21,6 +22,16 @@ task showPlatformVersion(type: SshTask) {
     session(remotes.localhost) {
         execute('uname -a')
         execute('cat /etc/*-release || true')
+    }
+}
+
+task deploy(type: SshTask, dependsOn: war) {
+    ext {
+        webappsDir = '/webapps'
+    }
+    session(remotes.localhost) {
+        put(war.archivePath.path, webappsDir)
+        execute('sudo service tomcat restart')
     }
 }
 

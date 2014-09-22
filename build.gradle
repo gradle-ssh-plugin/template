@@ -3,12 +3,12 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.hidetake:gradle-ssh-plugin:0.3.12'
+        classpath 'org.hidetake:gradle-ssh-plugin:0.4.0'
     }
 }
 
 apply plugin: 'war'
-apply plugin: 'org.hidetake.ssh'
+apply plugin: 'ssh'
 
 remotes {
     localhost {

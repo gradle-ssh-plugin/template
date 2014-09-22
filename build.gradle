@@ -1,14 +1,14 @@
-apply plugin: 'war'
-apply plugin: 'ssh'
-
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'org.hidetake:gradle-ssh-plugin:0.3.12'
     }
 }
+
+apply plugin: 'war'
+apply plugin: 'org.hidetake.ssh'
 
 remotes {
     localhost {

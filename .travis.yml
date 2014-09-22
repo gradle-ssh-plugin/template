@@ -1,5 +1,7 @@
 language: java
-jdk: oraclejdk7
+jdk:
+  - oraclejdk7
+  - oraclejdk8
 install:
   - ./gradlew
   - ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_rsa

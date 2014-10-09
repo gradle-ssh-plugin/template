@@ -1,14 +1,7 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'org.hidetake:gradle-ssh-plugin:0.4.1'
-    }
+plugins {
+    id 'war'
+    id 'org.hidetake.ssh' version '0.4.2'
 }
-
-apply plugin: 'war'
-apply plugin: 'ssh'
 
 remotes {
     localhost {
@@ -36,5 +29,5 @@ task deploy(type: SshTask, dependsOn: war) {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.0'
+    gradleVersion = '2.1'
 }

@@ -7,7 +7,7 @@ A template project with [Gradle SSH Plugin](https://github.com/int128/gradle-ssh
 Prerequisite
 ------------
 
-Java 7 or later.
+Java 6 or later.
 
 
 Try it now

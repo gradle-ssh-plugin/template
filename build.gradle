@@ -1,6 +1,6 @@
 plugins {
     id 'war'
-    id 'org.hidetake.ssh' version '1.0.2'
+    id 'org.hidetake.ssh' version '1.0.3'
 }
 
 remotes {
@@ -14,19 +14,17 @@ remotes {
 task showPlatformVersion << {
     ssh.run {
         session(remotes.localhost) {
-            execute('uname -a')
-            execute('cat /etc/*-release || true')
+            execute 'uname -a'
+            execute 'cat /etc/*-release || true'
         }
     }
 }
 
-ext.webappsDir = '/webapps'
-
 task deploy(dependsOn: war) << {
     ssh.run {
         session(remotes.localhost) {
-            put(war.archivePath.path, webappsDir)
-            execute('sudo service tomcat restart')
+            put from: war.archivePath.path, into: '/webapps'
+            execute 'sudo service tomcat restart'
         }
     }
 }

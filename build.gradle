@@ -3,6 +3,10 @@ plugins {
     id 'org.hidetake.ssh' version '1.0.4'
 }
 
+ssh.settings {
+    dryRun = project.hasProperty('dryRun')
+}
+
 remotes {
     localhost {
         host = 'localhost'

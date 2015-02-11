@@ -25,3 +25,9 @@ Edit `build.gradle` and run Gradle.
 ```bash
 ./gradlew showPlatformVersion
 ```
+
+We can dry run the script as follows:
+
+```bash
+./gradlew -PdryRun -i showPlatformVersion
+```

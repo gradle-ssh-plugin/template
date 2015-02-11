@@ -15,7 +15,7 @@ task showPlatformVersion << {
     ssh.run {
         session(remotes.localhost) {
             execute 'uname -a'
-            execute 'cat /etc/*-release || true'
+            execute 'cat /etc/*-release', ignoreError: true
         }
     }
 }

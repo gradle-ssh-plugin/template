@@ -32,7 +32,3 @@ task deploy(dependsOn: war) << {
         }
     }
 }
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
-}

@@ -1,6 +1,6 @@
 plugins {
     id 'war'
-    id 'org.hidetake.ssh' version '2.1.2'
+    id 'org.hidetake.ssh' version '2.2.0'
 }
 
 ssh.settings {
@@ -16,6 +16,7 @@ remotes {
 }
 
 task showPlatformVersion << {
+    println ssh.version
     ssh.run {
         session(remotes.localhost) {
             execute 'uname -a'

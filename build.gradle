@@ -15,21 +15,25 @@ remotes {
     }
 }
 
-task showPlatformVersion << {
-    println ssh.version
-    ssh.run {
-        session(remotes.localhost) {
-            execute 'uname -a'
-            execute 'cat /etc/*-release', ignoreError: true
+task showPlatformVersion {
+    doLast {
+        println ssh.version
+        ssh.run {
+            session(remotes.localhost) {
+                execute 'uname -a'
+                execute 'cat /etc/*-release', ignoreError: true
+            }
         }
     }
 }
 
-task deploy(dependsOn: war) << {
-    ssh.run {
-        session(remotes.localhost) {
-            put from: war.archivePath.path, into: '/webapps'
-            execute 'sudo service tomcat restart'
+task deploy(dependsOn: war) {
+    doLast {
+        ssh.run {
+            session(remotes.localhost) {
+                put from: war.archivePath.path, into: '/webapps'
+                execute 'sudo service tomcat restart'
+            }
         }
     }
 }

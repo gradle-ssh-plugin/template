@@ -24,5 +24,4 @@ jobs:
       - run: ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_ecdsa
       - run: tee -a ~/.ssh/authorized_keys < ~/.ssh/id_ecdsa.pub
       - run: ssh -o StrictHostKeyChecking=accept-new localhost true
-      - run: grep localhost ~/.ssh/known_hosts
       - run: ./gradlew showPlatformVersion

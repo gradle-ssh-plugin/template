@@ -23,5 +23,5 @@ jobs:
       - run: mkdir -m 700 -p ~/.ssh
       - run: ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_ecdsa
       - run: tee -a ~/.ssh/authorized_keys < ~/.ssh/id_ecdsa.pub
-      - run: ssh -o StrictHostKeyChecking=accept-new localhost true
+      - run: ssh -v -o StrictHostKeyChecking=accept-new -o HostKeyAlgorithms=ecdsa-sha2-nistp256 localhost true
       - run: ./gradlew showPlatformVersion

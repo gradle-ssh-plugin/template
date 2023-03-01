@@ -1,6 +1,6 @@
 plugins {
     id 'war'
-    id 'org.hidetake.ssh' version '2.10.1'
+    id 'org.hidetake.ssh' version '2.11.2'
 }
 
 ssh.settings {
@@ -11,7 +11,7 @@ remotes {
     localhost {
         host = 'localhost'
         user = System.properties['user.name']
-        identity = file("${System.properties['user.home']}/.ssh/id_rsa")
+        identity = file("${System.properties['user.home']}/.ssh/id_ecdsa")
     }
 }
 

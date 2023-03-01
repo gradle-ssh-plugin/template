@@ -1,0 +1,28 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+      - uses: gradle/wrapper-validation-action@v1
+      - uses: gradle/gradle-build-action@v2
+      - run: ./gradlew tasks
+
+      - run: mkdir -m 700 -p ~/.ssh
+      - run: ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_ecdsa
+      - run: tee -a ~/.ssh/authorized_keys < ~/.ssh/id_ecdsa.pub
+      - run: ssh -o StrictHostKeyChecking=accept-new localhost true
+      - run: grep localhost ~/.ssh/known_hosts
+      - run: ./gradlew showPlatformVersion
